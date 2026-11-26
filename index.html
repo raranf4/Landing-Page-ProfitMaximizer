@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profit Maximizer - Paket Promosi Premium | JobConnect</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1746b5;
+    --navy: #101d38;
+    --text: #172033;
+    --muted: #68758a;
+    --light: #f4f7fc;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #edf0f5;
+}
+
+.nav-content {
+    min-height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #536078;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 23px;
+    border-radius: 9px;
+    background: var(--primary);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+    background:
+        radial-gradient(circle at 85% 20%, #274e96 0, transparent 32%),
+        linear-gradient(125deg, #101d38, #142e59);
+    color: white;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #b9d2ff;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 55px);
+    line-height: 1.15;
+    letter-spacing: -1.8px;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #79aaff;
+}
+
+.hero p {
+    color: #c3cfe3;
+    font-size: 16px;
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.btn-outline {
+    border: 1px solid #8ca6d0;
+    color: white;
+    padding: 13px 23px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* HERO CARD */
+.dashboard {
+    background: white;
+    color: var(--text);
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.dash-header h3 {
+    font-size: 15px;
+}
+
+.status {
+    color: #16834c;
+    background: #e8f8ef;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.job-card {
+    border: 1px solid #e9edf4;
+    border-radius: 12px;
+    padding: 17px;
+    margin-bottom: 13px;
+}
+
+.job-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.company-icon {
+    width: 39px;
+    height: 39px;
+    border-radius: 10px;
+    background: #e9f0ff;
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+}
+
+.featured-label {
+    color: var(--primary);
+    background: #edf3ff;
+    padding: 5px 9px;
+    border-radius: 5px;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.job-card h4 {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.job-card p {
+    color: var(--muted);
+    font-size: 11px;
+    margin: 0;
+}
+
+.dash-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.stat-box {
+    background: #f5f7fb;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.stat-box strong {
+    display: block;
+    color: var(--primary);
+    font-size: 18px;
+}
+
+.stat-box small {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* GENERAL SECTION */
+section {
+    padding: 85px 0;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 660px;
+    margin: 0 auto 48px;
+}
+
+.section-title span {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    font-size: clamp(27px, 4vw, 37px);
+    line-height: 1.25;
+    margin: 12px 0;
+    letter-spacing: -0.8px;
+}
+
+.section-title p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* BENEFITS */
+.benefits {
+    background: var(--light);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.info-card {
+    background: white;
+    padding: 28px;
+    border: 1px solid #e9edf5;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(20, 45, 90, 0.08);
+}
+
+.card-number {
+    color: var(--primary);
+    background: #edf3ff;
+    width: 45px;
+    height: 45px;
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* FEATURES */
+.feature-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.feature-preview {
+    background: #eef3fc;
+    border-radius: 18px;
+    padding: 35px;
+}
+
+.preview-window {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 12px 35px rgba(20, 40, 80, 0.08);
+}
+
+.preview-window h3 {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.preview-job {
+    border: 1px solid #e6ebf3;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+.preview-job strong {
+    display: block;
+    font-size: 13px;
+}
+
+.preview-job small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.preview-job span {
+    display: inline-block;
+    background: #eaf1ff;
+    color: var(--primary);
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.feature-text h2 {
+    font-size: 33px;
+    line-height: 1.25;
+    margin-bottom: 17px;
+}
+
+.feature-text > p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 23px;
+}
+
+.feature-list {
+    list-style: none;
+}
+
+.feature-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #edf0f5;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.feature-list li small {
+    display: block;
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 22px;
+    margin-top: 3px;
+}
+
+.feature-list li::before {
+    content: "✓";
+    color: var(--primary);
+    font-weight: 800;
+    margin-right: 10px;
+}
+
+/* PRICING */
+.pricing {
+    background: var(--light);
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.price-card {
+    background: white;
+    padding: 24px;
+    border: 1px solid #e5eaf2;
+    border-radius: 15px;
+    position: relative;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+}
+
+.price-card.popular {
+    border: 2px solid var(--primary);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
+}
+
+.popular-label {
+    position: absolute;
+    top: -13px;
+    right: 18px;
+    background: var(--primary);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.price-card h3 {
+    font-size: 17px;
+}
+
+.price-card .desc {
+    color: var(--muted);
+    font-size: 12px;
+    min-height: 48px;
+    margin: 8px 0 16px;
+}
+
+.price {
+    font-size: 27px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 18px;
+}
+
+.price small {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.price-card ul {
+    list-style: none;
+    margin-bottom: 22px;
+    flex: 1;
+}
+
+.price-card li {
+    font-size: 12px;
+    color: #536078;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f2f6;
+}
+
+.price-card li::before {
+    content: "✓";
+    color: var(--primary);
+    margin-right: 9px;
+    font-weight: 800;
+}
+
+.price-card .btn {
+    width: 100%;
+}
+
+/* PROCESS */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.step {
+    text-align: center;
+    padding: 20px;
+}
+
+.step-num {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 17px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-weight: 800;
+}
+
+.step h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.step p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(120deg, #142b53, #2563eb);
+    color: white;
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.cta h2 {
+    font-size: clamp(27px, 4vw, 38px);
+    margin-bottom: 15px;
+}
+
+.cta p {
+    max-width: 620px;
+    margin: 0 auto 27px;
+    color: #d4e1f7;
+    font-size: 14px;
+}
+
+.cta .btn {
+    background: white;
+    color: var(--primary);
+}
+
+.cta .btn:hover {
+    background: #eaf1ff;
+}
+
+/* FOOTER */
+footer {
+    background: #0c172d;
+    color: white;
+    padding: 35px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+footer p {
+    color: #a7b4ca;
+    font-size: 12px;
+}
+
+/* FORM MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 15, 35, 0.7);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-head h2 {
+    font-size: 20px;
+}
+
+.close {
+    border: none;
+    background: #f0f3f8;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce2ec;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+}
+
+.modal-box form .btn {
+    width: 100%;
+}
+
+.form-note {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+    .price-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .hero-content,
+    .feature-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .card-grid,
+    .steps {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero {
+        padding: 75px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-content {
+        min-height: 65px;
+    }
+
+    .nav-content > .btn {
+        padding: 10px 13px;
+        font-size: 11px;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .card-grid,
+    .price-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .dashboard {
+        padding: 18px;
+    }
+
+    .feature-preview {
+        padding: 18px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="container nav-content">
+        <a href="#" class="logo">Job<span>Connect.</span></a>
+
+        <nav class="nav-links">
+            <a href="#layanan">Layanan</a>
+            <a href="#keunggulan">Keunggulan</a>
+            <a href="#harga">Harga</a>
+            <a href="#cara-kerja">Cara Kerja</a>
+        </nav>
+
+        <button class="btn" onclick="openModal('Paket Promosi Premium Lengkap')">
+            Mulai Promosi
+        </button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container hero-content">
+
+        <div>
+            <span class="tag">PROFIT MAXIMIZER · JOBCONNECT</span>
+
+            <h1>
+                Tingkatkan Visibilitas Lowongan
+                <span>& Profil Perusahaan Anda.</span>
+            </h1>
+
+            <p>
+                Profit Maximizer adalah layanan promosi lowongan kerja premium
+                JobConnect bagi perusahaan, UMKM, startup, serta HRD dan recruiter
+                untuk memperluas eksposur dan menjangkau lebih banyak pencari kerja.
+            </p>
+
+            <div class="hero-actions">
+                <button class="btn" onclick="document.getElementById('harga').scrollIntoView()">
+                    Lihat Paket Promosi
+                </button>
+
+                <a href="#layanan" class="btn-outline">
+                    Pelajari Layanan
+                </a>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="dash-header">
+                <h3>Preview Profit Maximizer</h3>
+                <span class="status">AKTIF</span>
+            </div>
+
+            <div class="job-card">
+                <div class="job-top">
+                    <div class="company-icon">JC</div>
+                    <span class="featured-label">FEATURED JOB</span>
+                </div>
+                <h4>Penempatan Lowongan Unggulan</h4>
+                <p>Posisi lebih menonjol agar mudah ditemukan pencari kerja</p>
+            </div>
+
+            <div class="job-card">
+                <div class="job-top">
+                    <div class="company-icon">JC</div>
+                    <span class="featured-label">JOB HIGHLIGHT</span>
+                </div>
+                <h4>Penanda Khusus Lowongan</h4>
+                <p>Tampil berbeda dari publikasi reguler di halaman JobConnect</p>
+            </div>
+
+            <div class="dash-stats">
+                <div class="stat-box">
+                    <strong>Spotlight</strong>
+                    <small>Profil Perusahaan</small>
+                </div>
+                <div class="stat-box">
+                    <strong>4 Pilihan</strong>
+                    <small>Paket Promosi</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits" id="keunggulan">
+    <div class="container">
+
+        <div class="section-title">
+            <span>Tujuan & Manfaat</span>
+            <h2>Solusi Promosi untuk Perusahaan, UMKM, & Startup</h2>
+            <p>
+                Membantu memperkenalkan profil dan identitas bisnis, meningkatkan
+                peluang lowongan ditemukan pelamar, serta menyediakan pilihan promosi
+                sesuai kebutuhan perekrutan.
+            </p>
+        </div>
+
+        <div class="card-grid">
+
+            <div class="info-card">
+                <div class="card-number">01</div>
+                <h3>Visibilitas Lowongan Lebih Tinggi</h3>
+                <p>
+                    Meningkatkan visibilitas lowongan pekerjaan yang dipublikasikan
+                    perusahaan agar lebih mudah ditemukan oleh pencari kerja.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="card-number">02</div>
+                <h3>Pilihan Promosi Fleksibel</h3>
+                <p>
+                    Menyediakan fasilitas promosi tambahan bagi perusahaan, UMKM,
+                    startup, serta HRD dan recruiter sesuai kebutuhan perekrutan.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="card-number">03</div>
+                <h3>Profil & Identitas Bisnis Menonjol</h3>
+                <p>
+                    Membantu memperkenalkan profil dan identitas perusahaan kepada
+                    calon pelamar melalui eksposur yang lebih luas.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="layanan">
+    <div class="container feature-layout">
+
+        <div class="feature-preview">
+            <div class="preview-window">
+                <h3>Fasilitas Layanan Profit Maximizer</h3>
+
+                <div class="preview-job">
+                    <strong>Featured Job</strong>
+                    <small>Penempatan lowongan di posisi yang lebih menonjol</small><br>
+                    <span>FEATURED JOB</span>
+                </div>
+
+                <div class="preview-job">
+                    <strong>Job Highlight</strong>
+                    <small>Label atau penanda khusus agar berbeda dari publikasi reguler</small><br>
+                    <span>JOB HIGHLIGHT</span>
+                </div>
+
+                <div class="preview-job">
+                    <strong>Company Spotlight</strong>
+                    <small>Penonjolan identitas dan deskripsi profil perusahaan</small><br>
+                    <span>COMPANY SPOTLIGHT</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-text">
+            <span style="color:#2563eb;font-size:12px;font-weight:800;">
+                FASILITAS LAYANAN
+            </span>
+
+            <h2>Dirancang untuk Memaksimalkan Eksposur Lowongan</h2>
+
+            <p>
+                Melalui kombinasi fasilitas promosi di platform JobConnect,
+                perusahaan dapat menyajikan informasi lowongan dan profil bisnis
+                dengan lebih jelas kepada pencari kerja.
+            </p>
+
+            <ul class="feature-list">
+                <li>
+                    Featured Job
+                    <small>Penempatan lowongan pekerjaan pada posisi yang lebih menonjol di halaman website JobConnect.</small>
+                </li>
+                <li>
+                    Job Highlight
+                    <small>Pemberian label atau penanda khusus pada lowongan pekerjaan agar terlihat berbeda dari publikasi reguler.</small>
+                </li>
+                <li>
+                    Company Spotlight
+                    <small>Penonjolan profil perusahaan melalui informasi identitas dan deskripsi agar lebih dikenal pencari kerja.</small>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="harga">
+    <div class="container">
+
+        <div class="section-title">
+            <span>Rekomendasi Harga Penawaran</span>
+            <h2>Pilih Paket Promosi Sesuai Kebutuhan</h2>
+            <p>
+                Tersedia pilihan satuan maupun paket gabungan untuk mendukung
+                kebutuhan publikasi lowongan dan profil perusahaan.
+            </p>
+        </div>
+
+        <div class="price-grid">
+
+            <div class="price-card">
+                <h3>Featured Job</h3>
+                <p class="desc">
+                    Penempatan lowongan pada posisi yang lebih menonjol di JobConnect.
+                </p>
+
+                <div class="price">
+                    Rp50.000 <small>/ paket</small>
+                </div>
+
+                <ul>
+                    <li>Penempatan lowongan unggulan</li>
+                    <li>Lebih mudah ditemukan pencari kerja</li>
+                    <li>Cocok untuk lowongan prioritas</li>
+                </ul>
+
+                <button class="btn" onclick="openModal('Featured Job')">
+                    Pilih Paket
+                </button>
+            </div>
+
+            <div class="price-card">
+                <h3>Job Highlight</h3>
+                <p class="desc">
+                    Label atau penanda khusus agar lowongan terlihat berbeda dari publikasi reguler.
+                </p>
+
+                <div class="price">
+                    Rp50.000 <small>/ paket</small>
+                </div>
+
+                <ul>
+                    <li>Label atau penanda visual khusus</li>
+                    <li>Membedakan dari lowongan reguler</li>
+                    <li>Meningkatkan perhatian pelamar</li>
+                </ul>
+
+                <button class="btn" onclick="openModal('Job Highlight')">
+                    Pilih Paket
+                </button>
+            </div>
+
+            <div class="price-card">
+                <h3>Featured Job + Job Highlight</h3>
+                <p class="desc">
+                    Kombinasi penempatan posisi unggulan dan penanda khusus pada lowongan.
+                </p>
+
+                <div class="price">
+                    Rp85.000 <small>/ paket</small>
+                </div>
+
+                <ul>
+                    <li>Termasuk Featured Job</li>
+                    <li>Termasuk Job Highlight</li>
+                    <li>Visibilitas & pembeda ganda</li>
+                </ul>
+
+                <button class="btn" onclick="openModal('Featured Job + Job Highlight')">
+                    Pilih Paket
+                </button>
+            </div>
+
+            <div class="price-card popular">
+                <span class="popular-label">PAKET TERLENGKAP</span>
+
+                <h3>Paket Promosi Premium Lengkap</h3>
+                <p class="desc">
+                    Cakupan promosi menyeluruh termasuk Company Spotlight untuk profil perusahaan.
+                </p>
+
+                <div class="price">
+                    Rp125.000 <small>/ paket</small>
+                </div>
+
+                <ul>
+                    <li>Featured Job & Job Highlight</li>
+                    <li>Company Spotlight (profil & identitas)</li>
+                    <li>Eksposur maksimal bagi perusahaan</li>
+                </ul>
+
+                <button class="btn" onclick="openModal('Paket Promosi Premium Lengkap')">
+                    Pilih Paket
+                </button>
+            </div>
+
+        </div>
+
+        <p style="text-align:center;color:#68758a;font-size:11px;margin-top:25px;">
+            Catatan: Harga tersebut merupakan rekomendasi awal untuk perencanaan bisnis dan masih dapat disesuaikan dengan fitur serta biaya operasional JobConnect.
+        </p>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section id="cara-kerja">
+    <div class="container">
+
+        <div class="section-title">
+            <span>Alur Pengajuan</span>
+            <h2>Mulai Promosikan Lowongan Anda</h2>
+            <p>
+                Ajukan minat layanan promosi JobConnect untuk membantu
+                memperkenalkan lowongan dan profil perusahaan Anda.
+            </p>
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-num">01</div>
+                <h3>Pilih Paket</h3>
+                <p>Tentukan layanan atau paket Profit Maximizer yang sesuai.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-num">02</div>
+                <h3>Isi Formulir Minat</h3>
+                <p>Lengkapi informasi perusahaan dan kebutuhan promosi Anda.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-num">03</div>
+                <h3>Konfirmasi Detail</h3>
+                <p>Diskusikan detail penawaran dan penyesuaian layanan.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-num">04</div>
+                <h3>Publikasi & Eksposur</h3>
+                <p>Lowongan dan profil perusahaan tampil lebih menonjol di JobConnect.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2>Setiap Peluang Dimulai dari Persiapan & Eksposur</h2>
+
+        <p>
+            Profit Maximizer membantu perusahaan menawarkan nilai tambah dalam
+            mempromosikan lowongan pekerjaan dan profil bisnis secara lebih terarah
+            di JobConnect.
+        </p>
+
+        <button class="btn" onclick="openModal('Paket Promosi Premium Lengkap')">
+            Ajukan Minat Layanan
+        </button>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container footer-content">
+        <div>
+            <a href="#" class="logo" style="color:white;">
+                Job<span>Connect.</span>
+            </a>
+            <p>Profit Maximizer · Paket Promosi Lowongan Kerja Premium JobConnect.</p>
+        </div>
+
+        <p>© 2026 JobConnect. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- ORDER MODAL -->
+<div class="modal" id="orderModal">
+    <div class="modal-box">
+
+        <div class="modal-head">
+            <h2>Form Minat Layanan</h2>
+            <button type="button" class="close" onclick="closeModal()">×</button>
+        </div>
+
+        <form id="orderForm">
+
+            <div class="form-group">
+                <label>Nama Perusahaan / UMKM / Startup</label>
+                <input type="text" id="company" required
+                placeholder="Masukkan nama perusahaan atau organisasi">
+            </div>
+
+            <div class="form-group">
+                <label>Nama Penanggung Jawab (HRD / Recruiter)</label>
+                <input type="text" id="person" required
+                placeholder="Nama HRD atau perwakilan perusahaan">
+            </div>
+
+            <div class="form-group">
+                <label>Email Perusahaan</label>
+                <input type="email" id="email" required
+                placeholder="email@perusahaan.com">
+            </div>
+
+            <div class="form-group">
+                <label>Nomor WhatsApp</label>
+                <input type="tel" id="phone" required
+                placeholder="Masukkan nomor WhatsApp">
+            </div>
+
+            <div class="form-group">
+                <label>Pilih Paket Profit Maximizer</label>
+                <select id="service" required>
+                    <option value="">Pilih layanan atau paket</option>
+                    <option>Featured Job - Rp50.000</option>
+                    <option>Job Highlight - Rp50.000</option>
+                    <option>Featured Job + Job Highlight - Rp85.000</option>
+                    <option>Paket Promosi Premium Lengkap - Rp125.000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Catatan Tambahan</label>
+                <textarea id="notes" rows="3"
+                placeholder="Tuliskan kebutuhan promosi atau penyesuaian layanan"></textarea>
+            </div>
+
+            <button type="submit" class="btn">
+                Kirim Minat Layanan
+            </button>
+
+            <p class="form-note">
+                Setelah menekan tombol, WhatsApp akan terbuka dengan
+                pesan pemesanan yang telah terisi otomatis.
+                Anda perlu menekan tombol Kirim di WhatsApp.
+            </p>
+
+        </form>
+    </div>
+</div>
+
+<script>
+// =====================================
+// PENGATURAN WHATSAPP ADMIN JOBCONNECT
+// =====================================
+
+const nomorAdmin = "6281321127945";
+
+const modal = document.getElementById('orderModal');
+const serviceSelect = document.getElementById('service');
+
+// Membuka modal pemesanan
+function openModal(service) {
+    modal.classList.add('active');
+
+    const options = [...serviceSelect.options];
+
+    const matched = options.find(option =>
+        option.text.includes(service)
+    );
+
+    if (matched) {
+        serviceSelect.value = matched.value;
+    } else {
+        serviceSelect.value = "";
+    }
+}
+
+// Menutup modal
+function closeModal() {
+    modal.classList.remove('active');
+}
+
+// Menutup modal jika area luar diklik
+modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
+// Proses pengiriman formulir
+document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const company = document.getElementById('company').value.trim();
+    const person = document.getElementById('person').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const service = document.getElementById('service').value;
+    const notes = document.getElementById('notes').value.trim();
+
+    if (nomorAdmin === "6281234567890") {
+        alert("Nomor WhatsApp admin belum diatur. Silakan ganti nomor pada bagian JavaScript terlebih dahulu.");
+        return;
+    }
+
+    const pesan =
+`Halo Admin JobConnect, saya ingin mengajukan minat layanan Profit Maximizer.
+
+INFORMASI PERUSAHAAN
+
+Nama Perusahaan / UMKM / Startup: ${company}
+Nama Penanggung Jawab: ${person}
+Email Perusahaan: ${email}
+Nomor WhatsApp: ${phone}
+
+DETAIL LAYANAN
+
+Paket Dipilih: ${service}
+
+Catatan Tambahan:
+${notes || "-"}
+
+Mohon informasi lebih lanjut mengenai detail layanan dan penawaran.
+
+Terima kasih.
+JobConnect - Profit Maximizer`;
+
+    const url = "https://wa.me/" + nomorAdmin +
+                "?text=" + encodeURIComponent(pesan);
+
+    window.open(url, "_blank");
+
+    this.reset();
+    closeModal();
+});
+</script>
+
+</body>
+</html>
